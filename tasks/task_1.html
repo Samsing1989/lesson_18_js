@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задача 1</title>
+    <script>
+      function func() {
+        const number1 = parseFloat(document.getElementById("first").value)
+        const number2 = parseFloat(document.getElementById("second").value)
+        const sum = number1 + number2
+        document.getElementById("result").value = sum
+      }
+      function func2() {
+        const number1 = parseFloat(document.getElementById("first").value)
+        const number2 = parseFloat(document.getElementById("second").value)
+        const product = number1 * number2
+        document.getElementById("result").value = product
+      }
+      function func3() {
+        const number1 = parseFloat(document.getElementById("first").value)
+        const number2 = parseFloat(document.getElementById("second").value)
+        const subtraction = number1 - number2
+        document.getElementById("result").value = subtraction
+      }
+      function func4() {
+        const number1 = parseFloat(document.getElementById("first").value)
+        const number2 = parseFloat(document.getElementById("second").value)
+        const division = number1 / number2
+        document.getElementById("result").value = division
+      }
+      window.onload = function () {
+        document.getElementsByTagName("button")[0].onclick = func
+        document.getElementsByTagName("button")[1].onclick = func2
+        document.getElementsByTagName("button")[2].onclick = func3
+        document.getElementsByTagName("button")[3].onclick = func4
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Задача 1</h1>
+    <p>Розробити калькулятор</p>
+    <div>
+      <label>
+        First number
+        <input id="first" type="number" value="0" />
+      </label>
+    </div>
+    <div>
+      <label>
+        Second number
+        <input id="second" type="number" value="0" />
+      </label>
+    </div>
+    <div id="btn">
+      <button>Додати</button>
+      <button>Помножити</button>
+      <button>Відняти</button>
+      <button>Поділити</button>
+    </div>
+    <div>
+      <label>
+        Результат
+        <input type="number" id="result" />
+      </label>
+    </div>
+  </body>
+</html>

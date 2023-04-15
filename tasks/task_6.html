@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задача 6</title>
+  </head>
+
+  <body>
+    <h1>Задача 6</h1>
+    <p>
+      Користувач задає кількість оцінок і натискає на кнопку «get table». В
+      результаті формується таблиця з input, куди користувач вводить оцінки.
+      Після цього натискає на кнопку “get sum” і знаходить середнє значення.
+    </p>
+    <div id="res">
+      <label>
+        кількість оцінок
+        <input type="number" id="input" />
+      </label>
+      <button id="button">Get table</button>
+    </div>
+    <script>
+      function getTable() {
+        const numImput = document.getElementById("input").value
+        let table = document.createElement("table")
+        document.getElementById("res").append(table)
+        for (let i = 0; i < numImput; i++) {
+          let row = document.createElement("tr")
+          let nInput = document.createElement("input")
+          table.append(row)
+          row.innerHTML = `<input name="number">`
+        }
+        let nButton = document.createElement("button")
+        nButton.innerText = "Get sum"
+        document.getElementById("res").append(nButton)
+        nButton.onclick = getSum
+        function getSum() {
+          let sum = 0
+          const collectionNumber = document.getElementsByName("number")
+          let count = 0
+          let average = 0
+          for (let el of collectionNumber) {
+            sum += parseFloat(el.value)
+            count++
+            average = (sum / count).toFixed(1)
+          }
+          let result = document.createElement("div")
+          result.innerText = `середне ${average}`
+          nButton.append(result)
+        }
+      }
+      button.onclick = getTable
+    </script>
+  </body>
+</html>

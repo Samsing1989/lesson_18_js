@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задача 3</title>
+    <script>
+      function getYears() {
+        const year = parseFloat(document.getElementById("user-year").value)
+        let userYear = new Date().getFullYear()
+        let userAge = `Ви народились - ${userYear - year}`
+        let y = (document.createElement("div").innerHTML = userAge)
+        document.getElementById("button").after(y)
+      }
+      window.onload = function () {
+        document.getElementById("button").onclick = getYears
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Задача 3</h1>
+
+    <p>
+      Користувач задає рік народження. Визначити кількість років користувача.
+    </p>
+
+    <div id="year">
+      <label>
+        Скільки Вам років?
+        <input type="number" id="user-year" />
+      </label>
+      <button id="button">Розрахувати якого Ви року</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задача 4</title>
+  </head>
+
+  <body>
+    <h1>Задача 4</h1>
+    Відобразити таблицю 3*4 з випадковими числами (її треба динамічно створити і
+    вставити на сторінку)
+    <div id="res"></div>
+    <script>
+      function getTable() {
+        const table = document.createElement("table")
+        document.getElementById("res").append(table)
+        table.style.width = "300px"
+        table.style.border = "1px solid red"
+
+        for (let r = 0; r < 3; r++) {
+          let row = document.createElement("tr")
+          table.append(row)
+          for (let c = 0; c < 4; c++) {
+            let numberRandom = Math.floor(Math.random() * 24)
+            let column = document.createElement("th")
+            column.innerText = numberRandom
+            row.append(column)
+            column.style.border = "1px solid red"
+            column.style.height = "40px"
+            column.style.fontSize = "30px"
+          }
+        }
+      }
+      getTable()
+    </script>
+  </body>
+</html>

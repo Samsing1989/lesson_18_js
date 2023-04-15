@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задача 2</title>
+    <style>
+      input {
+        border-radius: 5px;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        margin-left: 10px;
+      }
+      button {
+        margin-bottom: 10px;
+      }
+    </style>
+    <script>
+      function convertor() {
+        const dollarRate = 39
+        const evroRate = 41
+        const grn = parseFloat(document.getElementById("grn").value)
+        const dollarVal = grn / dollarRate
+        const evroVal = grn / evroRate
+        document.getElementById("evro").value = evroVal.toFixed(2)
+        document.getElementById("dollar").value = dollarVal.toFixed(2)
+      }
+      window.onload = function () {
+        document.getElementById("conver").onclick = convertor
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Задача 2</h1>
+    <p>Зробити конвертер валют (курси валют – константи у скрипті)</p>
+    <div>
+      <label>
+        Сума в гривнях
+        <input type="number" id="grn" value="0" />
+      </label>
+    </div>
+    <div>
+      <button id="conver">Конвертувати</button>
+    </div>
+    <div>
+      <label>
+        Сума в євро
+        <input type="number" id="evro" value="0" />
+      </label>
+    </div>
+    <div>
+      <label>
+        Сума в доларах
+        <input type="number" id="dollar" value="0" />
+      </label>
+    </div>
+  </body>
+</html>
